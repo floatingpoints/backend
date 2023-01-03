@@ -16,6 +16,8 @@ services:
   cache:
     container_name: cache
     image: redis:6
+    ports:
+      - 6379:6379
     networks:
       - directus
 
@@ -33,9 +35,9 @@ services:
       # - ./database:/directus/database
       # If you want to load extensions from the host
       # - ./extensions:/directus/extensions
-      
+
       # Database snapshot
-      - ./snapshot.yaml:/directus/snapshot.yaml
+      - ./snapshot:/directus/snapshots
     networks:
       - directus
     depends_on:
@@ -58,7 +60,6 @@ services:
 
       ADMIN_EMAIL: 'admin@example.com'
       ADMIN_PASSWORD: 'd1r3ctu5'
-
       # Make sure to set this in production
       # (see https://docs.directus.io/self-hosted/config-options#general)
       # PUBLIC_URL: 'https://directus.example.com'
