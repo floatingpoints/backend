@@ -3,7 +3,7 @@ version: '3'
 services:
   database:
     container_name: database
-    image: postgis/postgis:13-master
+    image: postgres:15
     volumes:
       - ./data/database:/var/lib/postgresql/data
     networks:
@@ -23,7 +23,9 @@ services:
 
   directus:
     container_name: directus
-    build: .
+    build:
+      context: .
+    image: ghcr.io/floatingpoints/backend:main
     ports:
       - 8055:8055
     volumes:
@@ -37,7 +39,7 @@ services:
       # - ./extensions:/directus/extensions
 
       # Database snapshot
-      - ./snapshot:/directus/snapshots
+      - ./snapshots:/directus/snapshots
     networks:
       - directus
     depends_on:
