@@ -97,7 +97,7 @@ jobs:
       - name: Deploy to the Kubernetes cluster (staging)
         if: github.ref_name == 'main'
         run: |
-          ${{ steps.install-kubectl.outputs.kubectl-path }} rollout restart deploy nuxt-depl -n time4games-staging
+          ${{ steps.install-kubectl.outputs.kubectl-path }} rollout restart deploy directus-depl -n time4games-staging
 
       - name: Deploy to the Kubernetes cluster (production)
         if: startsWith(github.ref_name, 'v')
