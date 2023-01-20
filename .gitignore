@@ -2,5 +2,7 @@ node_modules
 
 # Directus
 .env
+.env.*
+!.env.example
 data
 uploads

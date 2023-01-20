@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: directus-env
+  namespace: time4games-staging
+data:
+  ADMIN_EMAIL: admin@time4.games
+  CACHE_ENABLED: 'true'
+  CACHE_REDIS: redis://redis.time4games-staging:6379
+  CACHE_STORE: redis
+  DB_CLIENT: pg
+  KEY: 1f2f53b5-b6ea-4d31-9ad3-20c07aa858ab
+  PUBLIC_URL: https://api-staging.time4.games
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: directus-env
+  namespace: time4games-staging
+spec:
+  encryptedData:
+    ADMIN_PASSWORD: AgC/IaJLrlCztsanAe4YJGFmPxoPems5pASci9oX+Q7UOZaN3G2MAXiV6UCkJoMD0iqyYHOPrTDeEq4IYEiyUPp04Dm0DkyluWyOxBaCASCIZpazh3vIzEArVutXop3bb3azfrJ7cvbqokuv6ajTh8rwQZHXvkGikkb2Klc5YTRFCMQGv8gYmcIh0/OcBIk15alv4wnPUh1hwwoH5GGs0eXMsbjNvVjnzYuBj3Psyt8FyfJahS1PTdiv7ckkhG4oR6eB9JRK0V4jDI9Q04ZTXRp4wOaBvFjeBEsjNtd/Ck4t34C3GfrO77HI4WsDbDXVOx/3Sv5Blmf4rYYj51R8nmIYQJf12MGCYrLd6bqkr1vZKyYep+PKPr9eEXKVZFYGnQAmjjUj1maqHYD62bvS99RmdCQnTLaVU1iBeHGVA8ZrLZvcrR7x05DZX9mwgWaMaj+46A6OQOhp4LEU1uzc/2G0xcBkP6OJeaIofnZLANw08Z2BXRzg2Ao+WBTSFO0yBZX/6GDR4pjHWZic36c2vCcsMGDMr1JKlFoo0KBiiJoYXXNeEf05vIAXUOfzkm2V7pCRAMZ+JJ94b6H/ENpIEOuRErtI0cOcbA8MIb2AXfM4NyfSfFJ7ZBivklPqQB5R7qncjGBkXFjMXOUUzH8pEl/L8dZaMsI1kOqJYUwoDmEEJbd0gA3Z/AV03WZfxz27U36LJq9IX+pejKP5lkEW8ZGyH9He6Ao9L+6niteVod/vFg==
+    SECRET: AgABJLozq5zvCAp+PtzOBZs7o8kXNiWSYPVQdWZNmk4LO2Iw+RgXwBYbLcYe4T4GVOSqk3as2Vfev0l2UYfuG43a0P2etv891AtdF3jRUMh+OEAgkh35sbnutJDB92QEJSiyZyE204TnjOrxCFUbZX+TAZXxme2JDbY11/g7dQk25YRE1lnfl78Q9UeyAJEoA0VmdRmYteA1pZmA7CFpxKz+jkd5wpIfeAulbWpPoZn0v4Fz17kxoMHFAPwRdW4IfMhFaWeAubF3x6pvXee0rMslWgeN3GdFA6JIw3aLysmfeqnwxpqweSCiMKzAOU8Gdh9zYtGmYdyu+lwkRhY7EYIsB1PBwZO/mTztROf09WH9ZyUFU9QLZWmyBGqqxrECkjM66BUEKDfi6sr8M5C4xzpgsaGkUDIh7899P9qTGHYc8XgDHMPBoad/D/B4yaIggt7+hIUcyDPEFTQPy8dKNlM1z751vkcHVRsllWe3xYBkV8TzUkgtao3LDzmbnOOBP3ELZYj2Ha5Atzh0LkKNWUO4dXM+l04tjvGUvULPSMbXIicbc6fZUZcUOPKKgcRJQ4fsiW7KnGcQwcOJ0qGvL88urdpN2d1S8KytvTyXmPjgdH+LPGZYyFBnUqoxZhWWN2yv7//1eZSxors2fxUT7q26gFW+mLPhc57p5N0Ju1h5hVdQmH6kY9oNw2ae5DnLSZhrLSDM1s15x0Y7aHyDB+yzzxEjW2O5FrklTGCzhO5tcAeSUuQ=
+  template:
+    metadata:
+      creationTimestamp: null
+      name: directus-env
+      namespace: time4games-staging
