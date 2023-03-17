@@ -1,4 +1,4 @@
-FROM directus/directus:9
+FROM directus/directus:9.23
 
 COPY snapshots/snapshot.yaml /directus/snapshots/snapshot.yaml
 
