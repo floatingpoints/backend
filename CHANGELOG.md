@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/floatingpoints/backend/compare/v0.1.1...v0.1.2) (2023-03-18)
+
+
+### Bug Fixes
+
+* missing namespace in prod deployment ([c9949cc](https://github.com/floatingpoints/backend/commit/c9949ccd87cb0532d0d8d9e428a7ab17555cce37))
+
 ### 0.1.1 (2023-03-18)
 
 
