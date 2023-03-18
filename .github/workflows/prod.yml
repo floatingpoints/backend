@@ -18,5 +18,7 @@ jobs:
   deploy:
     needs: build
     uses: floatingpoints/infra/.github/workflows/deploy-prod.yaml@main
+    with:
+      namespace: time4games-prod
     secrets:
       kubeconfig: ${{ secrets.KUBE_CONFIG_PROD }}
