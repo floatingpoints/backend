@@ -9,9 +9,14 @@ on:
 
 jobs:
   build:
-    uses: ./.github/workflows/_build-prod.yml
+    uses: floatingpoints/infra/.github/workflows/build-prod.yaml@main
+    with:
+      username: ${{ github.actor }}
+    secrets:
+      password: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
     needs: build
-    uses: ./.github/workflows/_deploy-prod.yml
-    secrets: inherit
+    uses: floatingpoints/infra/.github/workflows/deploy-prod.yaml@main
+    secrets:
+      kubeconfig: ${{ secrets.KUBE_CONFIG_PROD }}
